@@ -1,3 +1,10 @@
+const screen = document.querySelector("#screen");
+const calculatorButtons = document.querySelectorAll(".calculator");
+const calculationDisplay = document.createElement("span");
+const operationArray = [];
+
+calculationDisplay.setAttribute("id", "operation");
+
 function add(numberOne, numberTwo) {
   const sum = numberOne + numberTwo;
   return sum;
@@ -33,4 +40,16 @@ function operate(operator, numberOne, numberTwo) {
   }
 }
 
-console.log(operate("+", 3, 5));
+function displayOperation(operation) {
+  operationArray.push(operation);
+  const concatArray = operationArray.join("");
+  calculationDisplay.textContent = concatArray;
+  screen.appendChild(calculationDisplay);
+  return concatArray;
+}
+
+calculatorButtons.forEach((element) => {
+  element.addEventListener("click", function (e) {
+    displayOperation(e.target.value);
+  });
+});
