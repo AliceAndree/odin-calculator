@@ -65,13 +65,15 @@ body {
   justify-content: space-evenly;
 }
 
-#deco {
+#clear {
   width: 110px;
   height: 25px;
   border-radius: 5px;
   background-color: #4c5660;
   align-self: self-start;
   margin-left: 45px;
+  font-size: 16px;
+  letter-spacing: 4px;
 }
 
 #buttons {
