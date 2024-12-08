@@ -18,7 +18,19 @@ function divide(numberOne, numberTwo) {
   return division;
 }
 
-console.log(add(3, 5));
-console.log(substract(3, 5));
-console.log(multiply(3, 5));
-console.log(divide(3, 5));
+function operate(operator, numberOne, numberTwo) {
+  const arrayOfNumbers = [numberOne, numberTwo];
+
+  switch (operator) {
+    case "+":
+      return arrayOfNumbers.reduce(add);
+    case "-":
+      return arrayOfNumbers.reduce(substract);
+    case "*":
+      return arrayOfNumbers.reduce(multiply);
+    case "/":
+      return arrayOfNumbers.reduce(divide);
+  }
+}
+
+console.log(operate("+", 3, 5));
